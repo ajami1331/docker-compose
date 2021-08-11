@@ -1,0 +1,14 @@
+version: "3.6"
+services:
+  mongosingle:
+    image: mongo
+    command: mongod --dbpath /data/db --port 27017
+    ports:
+        - 27517:27017
+    expose:
+        - "27017"
+    environment:
+        TERM: xterm
+    volumes:
+        - /etc/localtime:/etc/localtime:ro
+        - /mongo_cluster/xs0:/data/db
